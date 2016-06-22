@@ -1,8 +1,10 @@
 <% provide(:title, "Home") %>
-<h1>Blogger App</h1>
-<p>
-  Welcome! This is the home page for the
-  <a href="http://www.google.com/">Blogger</a> Application.
-</p>
+<div class="jumbotron">
+  <h1>Welcome to the Blogger App</h1>
+  <h2>
+    Welcome! This is the home page for the
+    <a href="http://www.google.com/">Blogger</a> Application.
+  </h2>
 
-<%= link_to "Sign now!", '#'%>
+  <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+</div>
