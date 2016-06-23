@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-
+  has_many :posts, dependent: :destroy
  # used to set the default order in which elements are retrieved from the database
  default_scope -> { order(created_at: :desc) }
  # callback ensures email uniqueness by downcasing the email attribute

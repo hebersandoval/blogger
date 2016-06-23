@@ -1,0 +1,14 @@
+<% provide(:title, 'All posts') %>
+<h1>All posts</h1>
+
+<ul class="users">
+  <% @posts.each do |post| %>
+
+  <% link_to post.user.name, post.user %>
+  <%= post.title %>
+  <%= post.content %>
+
+    Posted <%= time_ago_in_words(post.created_at) %> ago.
+
+  <% end %>
+</ul>

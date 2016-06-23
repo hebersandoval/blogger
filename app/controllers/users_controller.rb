@@ -25,6 +25,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @posts = @user.posts
+    @post = current_user.posts.build if logged_in?
   end
 
   def edit
@@ -54,14 +56,6 @@ end
   end
 
   # Before filters
-
-  # Confirms a logged-in user.
-  def logged_in_user
-    unless logged_in?
-      flash[:danger] = "Please log in."
-      redirect_to login_path
-    end
-  end
 
   # Confirms the correct user.
   def correct_user
